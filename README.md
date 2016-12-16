@@ -15,3 +15,9 @@ dependencies {
     compile 'tw.com.tp6gl4cj86:jjlog:2016.12.16.1'
 }
 ```
+
+設定是否印出 Log，建議採用 BuildConfig.DEBUG。
+
+```java
+JJLog.setIsLog(BuildConfig.DEBUG);
+```
