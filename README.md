@@ -16,8 +16,20 @@ dependencies {
 }
 ```
 
-設定是否印出 Log，建議採用 BuildConfig.DEBUG。
+設定是否印出 Log
 
 ```java
-JJLog.setIsLog(BuildConfig.DEBUG);
+JJLog.setIsLog(BuildConfig.DEBUG); // true or false
+```
+
+已預設 tag 印出。(JJLog)
+
+```java
+JJLog.e("...");
+```
+
+已自訂 tag 印出。
+
+```java
+JJLog.e("tag", "...");
 ```
