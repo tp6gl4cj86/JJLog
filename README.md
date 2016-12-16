@@ -22,13 +22,13 @@ dependencies {
 JJLog.setIsLog(BuildConfig.DEBUG); // true or false
 ```
 
-已預設 tag 印出。(JJLog)
+以預設 tag 印出。(JJLog)
 
 ```java
 JJLog.e("...");
 ```
 
-已自訂 tag 印出。
+以自訂 tag 印出。
 
 ```java
 JJLog.e("tag", "...");
