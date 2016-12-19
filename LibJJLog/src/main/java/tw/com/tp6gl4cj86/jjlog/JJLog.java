@@ -26,7 +26,8 @@ public class JJLog
     {
         if (isLog)
         {
-            for (int i = 0; i <= log.length() / MaxLogSize; i++)
+            final int size = log.length();
+            for (int i = 0; i <= size / MaxLogSize; i++)
             {
                 final int start = i * MaxLogSize;
                 final int end = Math.min(log.length(), (i + 1) * MaxLogSize);
