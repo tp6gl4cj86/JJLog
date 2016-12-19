@@ -12,23 +12,23 @@ Add dependency.
 
 ```
 dependencies {
-    compile 'tw.com.tp6gl4cj86:jjlog:2016.12.16.1'
+    compile 'tw.com.tp6gl4cj86:jjlog:2016.12.19.1'
 }
 ```
 
-設定是否印出 Log
+set is print Log or not
 
 ```java
 JJLog.setIsLog(BuildConfig.DEBUG); // true or false
 ```
 
-以預設 tag 印出。(JJLog)
+print Log by default tag (JJLog)
 
 ```java
 JJLog.e("...");
 ```
 
-以自訂 tag 印出。
+print Log by custom tag
 
 ```java
 JJLog.e("tag", "...");
