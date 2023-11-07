@@ -1,15 +1,19 @@
-apply plugin: 'bintray-release'
-apply plugin: 'com.android.library'
+plugins {
+	id 'com.android.library'
+	id 'kotlin-android'
+	id 'maven-publish'
+}
 
-def version = "4.0.0"
+def versionStr = "5.0.0"
 
 android {
-	compileSdkVersion 28
+	namespace = 'tw.com.tp6gl4cj86.jjlog'
+	compileSdk 33
 	defaultConfig {
-		minSdkVersion 16
-		targetSdkVersion 28
-		versionCode 1
-		versionName version
+		minSdk 19
+		targetSdk 33
+		versionCode 2
+		versionName versionStr
 	}
 	buildTypes {
 		release {
@@ -17,9 +21,12 @@ android {
 			proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
 		}
 	}
-	lintOptions {
-		abortOnError false
-		checkReleaseBuilds false
+	compileOptions {
+		sourceCompatibility JavaVersion.VERSION_17
+		targetCompatibility JavaVersion.VERSION_17
+	}
+	kotlinOptions {
+		jvmTarget = '17'
 	}
 }
 
@@ -27,19 +34,16 @@ dependencies {
 	api fileTree(dir: 'libs', include: ['*.jar'])
 }
 
-publish {
-	userOrg = 'tp6gl4cj86'
-	groupId = 'tw.com.tp6gl4cj86'
-	artifactId = 'jjlog'
-	publishVersion = version
-	desc = 'JJLog'
-	website = 'https://github.com/tp6gl4cj86/JJLog'
-}
+afterEvaluate {
+	publishing {
+		publications {
+			release(MavenPublication) {
+				from components.release
 
-ext {
-	PUBLISH_GROUP_ID = 'tw.com.tp6gl4cj86'
-	PUBLISH_ARTIFACT_ID = 'jjlog'
-	PUBLISH_VERSION = version
+				groupId = 'tw.com.tp6gl4cj86'
+				artifactId = 'jjlog'
+				version = versionStr
+			}
+		}
+	}
 }
-
-apply from: 'https://raw.githubusercontent.com/blundell/release-android-library/master/android-release-aar.gradle'
