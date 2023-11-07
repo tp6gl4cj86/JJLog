@@ -8,13 +8,7 @@ JJLog
 
 # Usage
 
-Add dependency.
-
-```
-dependencies {
-    compile 'tw.com.tp6gl4cj86:jjlog:4.0.0'
-}
-```
+https://jitpack.io/#tp6gl4cj86/JJLog
 
 set is print Log or not
 
